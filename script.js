@@ -13,9 +13,6 @@ tabuleiro.forEach(casa => {
       numeroJogadas++;
     } 
     ganhador.innerText = verificaVencedor(tabuleiro);
-    if (jogoAcabou) {
-      
-    }
   });
 });
 
@@ -32,13 +29,19 @@ reiniciar.addEventListener("click", (event) => {
 });
 
 function jogadaValida(casa, jogador) {
-  if (casa.innerHTML === "") {
-    casa.innerText = jogador;
-    return true;
+  if (!jogoAcabou) {
+    if (casa.innerHTML === "" && !jogoAcabou) {
+      casa.innerText = jogador;
+      return true;
+    } else {
+      alert("Casa já preenchida!");
+      return false;
+    }
   } else {
-    alert("Casa já preenchida!");
+    alert("Jogo acabou!");
     return false;
   }
+
 }
 
 function verificaVencedor(tabuleiro) {
