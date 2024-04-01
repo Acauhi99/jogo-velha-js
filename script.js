@@ -24,7 +24,6 @@ reiniciar.addEventListener("click", (event) => {
     ganhador.innerText = "-> Ganhador Aqui <-";
     numeroJogadas = 0;
     jogoAcabou = false;
-    casa.removeAttribute("disabled");
   });
 });
 
